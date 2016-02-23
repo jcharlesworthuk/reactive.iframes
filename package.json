@@ -1,0 +1,24 @@
+{
+  "name": "reactive.iframes",
+  "version": "1.0.0",
+  "description": "A pair of javascript files for resizing iFrames that have a dynamic height",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "src": "src",
+    "dist": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcharlesworthuk/reactive.iframes.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcharlesworthuk/reactive.iframes/issues"
+  },
+  "homepage": "https://github.com/jcharlesworthuk/reactive.iframes#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}

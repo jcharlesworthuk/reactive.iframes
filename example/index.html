@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Reactive IFrames - Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0; user-scalable=no;">
+
+    <link rel="stylesheet" type="text/css" media="all" href="css/reset.meyerweb.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+
+	<script type="text/javascript" src="../dist/reactive.iframes.parent.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Banner iframe (could be an advertisment, hero image, anything)</h2>
+        <div class="top-banner" id="frame-container-top">
+             <iframe src="iframe-top/index.html" width="100%" marginheight="0" scrolling="no">
+             </iframe>
+         </div>
+    </header>
+
+    <main>
+        <h1>Reactive iframes javascript plugin</h1>
+        <a href="#" class="btn-github">GitHub</a>
+        <article>
+            <h1>Main Page Content</h1>
+            <h2>Static content section</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis maximus urna quis scelerisque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc at sem vel quam congue pharetra. Integer at odio et dui tristique elementum. Integer quam lectus, euismod vel dictum ac, pellentesque id lectus. Morbi facilisis molestie tincidunt. Nam vitae est a nisl venenatis dignissim. Integer non laoreet libero. Mauris nisl mi, auctor id sagittis ut, interdum sed elit. Suspendisse potenti. Pellentesque tempor mi sapien, a lobortis tellus iaculis at. Vestibulum eget diam vulputate, varius lacus eget, tempor nisi. Proin aliquet nulla at rhoncus molestie.</p>
+            <p>In tincidunt tortor ligula. Mauris molestie varius leo, et lacinia arcu pharetra quis. Maecenas tincidunt ex non odio pharetra porta. Nullam auctor efficitur metus id laoreet. Quisque volutpat risus at dapibus pharetra. Quisque accumsan molestie lobortis. Sed ut nisl elit. Sed non placerat elit, mollis aliquet velit.</p>
+        </article>
+        <aside>
+            <h1>Aside Content</h1>
+            <p>Make the page narrower than 768px and this will move to underneath the main page content.  Iframes below...</p>
+            <div id="frame-container-a1">
+                <iframe src="iframe-aside-1/index.html" width="100%" marginheight="0" scrolling="no">
+                </iframe>
+            </div>
+            <hr>
+            <div id="frame-container-a2">
+                <p>EXTERNAL DIV</p>
+            </div>
+        </aside>
+    </main>
+
+
+    <script type="text/javascript">
+        var topDiv = document.getElementById('frame-container-top');
+        new reactive.iframes.Parent(topDiv, 'frame-container-top');
+
+        var asideDiv1 = document.getElementById('frame-container-a1');
+        new reactive.iframes.Parent(asideDiv1, 'frame-container-a1');
+
+        //var asideDiv2 = document.getElementById('frame-container-a2');
+        //new reactive.iframes.Parent(asideDiv2, 'frame-container-a2');
+
+    </script>
+
+</body>
+</html>

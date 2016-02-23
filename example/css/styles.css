@@ -1,0 +1,91 @@
+body {
+	font-family: sans-serif;
+	font-size: 12pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;	
+	margin-bottom: 0.5em;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 1.2em;
+}
+
+a {
+	color: #294F6D;
+	text-decoration: none;
+}
+a:hover {	
+	text-decoration: underline;	
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #609732;
+}
+
+header h1 {
+	font-size: 0.7em;
+	font-weight: normal;
+	max-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0px;
+}
+
+article h1, aside h1 {
+	font-size: 1em;
+	color: #609732;
+	text-transform: uppercase;
+	border-bottom: 1px solid #609732;
+}
+
+article h2, aside h2 {
+	font-size: 2.0em;
+}
+
+main {
+	padding: 14px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+}
+
+main > article, main > aside {
+	display: table-cell;
+	float: left;
+	box-sizing: border-box;
+	margin-bottom: 1.5em;
+}
+
+@media (max-width: 768) {
+	main > article {
+		width: 100%;
+	}
+	main > aside {
+		width: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+	main > article {
+		width: 65%;
+		padding-right: 7px;
+	}
+	main > aside {
+		padding-left: 7px;
+		width: 35%;
+	}
+}
+
+header .top-banner {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 980px;
+}
+
