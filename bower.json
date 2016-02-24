@@ -1,0 +1,28 @@
+{
+  "name": "reactive-iframes",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jcharlesworthuk/reactive.iframes",
+  "authors": [
+    "James Charlesworth (jamesjohncharlesworth@gmail.com)"
+  ],
+  "description": "A pair of javascript files to allow responsive behaviour in iframes",
+  "moduleType": [
+    "amd"
+  ],
+  "main": [
+    "./dist/reactive.iframes.parent.js",
+    "./dist/reactive.iframes.child.js"
+  ],
+  "keywords": [
+    "Responsive",
+    "IFrames"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
