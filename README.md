@@ -5,6 +5,10 @@
 
 This module consists of a pair of javascript files that allow an &lt;iframe&gt; element to communicate its height to the parent document, this allow the parent node to resize the &lt;iframe&gt; element responsively.  The content of the &lt;iframe&gt; can have a dynamic height that responds to the width set by the main window, and everything just works
 
+## Example
+
+for a demo, see the [Example Page](http://jcharlesworthuk.github.io/reactive.iframes/example/index.html)
+
 ## Installing from Bower
 
 
@@ -59,7 +63,7 @@ You can then tell the plugin to monitor the parent node of an iframe using *new 
    
 ## Setting up the child iframes
 
-You also need to reference the child script in the content of every &lt;iframe&gt; you want to make resopnsive.  The script tag for the child script needs two attributes in order to tell the child script which &lt;iframe&gt; this is (as you can have multiple child iframes on the page).  The attributes required are:
+You also need to reference the child script in the content of every &lt;iframe&gt; you want to make responsive.  The script tag for the child script needs two attributes in order to tell the child script which &lt;iframe&gt; this is (as you can have multiple child iframes on the page).  The attributes required are:
 
 |   Attribute   | Description   |
 |---------------|---------------|
