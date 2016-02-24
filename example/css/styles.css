@@ -83,9 +83,57 @@ main > article, main > aside {
 	}
 }
 
+main > h1 {
+	margin-bottom: 10px;	
+}
+
 header .top-banner {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 980px;
 }
 
+.btn-github {
+	display: block;
+	margin-bottom: 30px;
+}
+
+.btn-github:hover {
+	text-decoration: none;
+	color: #4078c0;
+}
+
+
+.btn-github span {
+	position: relative;
+	top: -10px;
+}
+
+.btn-github:hover svg path {
+    fill: #4078c0;
+}
+
+.article-sub {
+	margin-top: 20px;
+}
+
+button {
+	cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: bold;
+    outline: 0;
+    border: 1px solid #999;
+    color: #444;
+    background: -webkit-linear-gradient(top, #eee, #ccc);
+    background: linear-gradient(to bottom, #eee, #ccc);
+    white-space: nowrap;
+    padding: 5px 8px;
+    line-height: 1.4;
+    position: relative;
+}
+
+button:hover {
+	background: #e0e0e0;
+
+}

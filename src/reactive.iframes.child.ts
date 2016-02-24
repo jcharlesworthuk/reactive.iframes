@@ -71,10 +71,14 @@ module reactive.iframes {
 
 (function () {
     var oldWindowLoad = window.onload;
-    window.onload = function (e: Event) {
+    if (document.readyState === "complete") {
         new reactive.iframes.Child();
-        if (oldWindowLoad) {
-            oldWindowLoad(e);
-        }
-    };
+    } else {
+        window.onload = function (e: Event) {
+            new reactive.iframes.Child();
+            if (oldWindowLoad) {
+                oldWindowLoad(e);
+            }
+        };
+    }
 })();
