@@ -19,6 +19,13 @@ Then the TypeScript can be compiled by running the default gulp task
 > gulp
 ```
 
+## Installing from Bower
+
+
+```
+> bower install reactive-iframes
+```
+
 
 ## Setting up the parent
 
