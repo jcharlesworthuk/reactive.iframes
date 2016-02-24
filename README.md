@@ -5,6 +5,14 @@
 
 This module consists of a pair of javascript files that allow an &lt;iframe&gt; element to communicate its height to the parent document, this allow the parent node to resize the &lt;iframe&gt; element responsively.  The content of the &lt;iframe&gt; can have a dynamic height that responds to the width set by the main window, and everything just works
 
+## Installing from Bower
+
+
+```
+> bower install reactive-iframes
+```
+
+
 ## Rebuilding the code
 
 The plugin is written in TypeScript.  There is a gulpfile for compiling and minifying the TypeScript.  To download the gulp packages required run
@@ -18,14 +26,6 @@ Then the TypeScript can be compiled by running the default gulp task
 ```
 > gulp
 ```
-
-## Installing from Bower
-
-
-```
-> bower install reactive-iframes
-```
-
 
 ## Setting up the parent
 
