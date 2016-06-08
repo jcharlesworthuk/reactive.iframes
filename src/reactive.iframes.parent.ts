@@ -10,7 +10,7 @@ module reactive.iframes {
         config: any
         messageRegex: RegExp
 
-        constructor(private element: HTMLElement, private id: string) {
+        constructor(private element: HTMLElement, private id: string, private addHeight?: number) {
             window.addEventListener('resize', this.onResize);
             this.messageRegex = new RegExp('^' + MessagePrefix + MessageDelimiter + id + MessageDelimiter + '(\\S+)' + MessageDelimiter + '(.+)$');
             window.addEventListener('message', this.processMessage.bind(this), false);
@@ -51,6 +51,9 @@ module reactive.iframes {
             var value = match[2];
             if (key === 'height') {
                 var height = parseInt(value);
+                if (this.addHeight) {
+                    height += this.addHeight;
+                }
                 console.log("Child -> " + height + " H Parent (" + this.id + ")");
                 this.iframe.setAttribute('height', height + 'px');
             }

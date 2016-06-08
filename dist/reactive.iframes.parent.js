@@ -5,10 +5,11 @@ var reactive;
         var MessagePrefix = 'ReactiveIFrames';
         var MessageDelimiter = '~';
         var Parent = (function () {
-            function Parent(element, id) {
+            function Parent(element, id, addHeight) {
                 var _this = this;
                 this.element = element;
                 this.id = id;
+                this.addHeight = addHeight;
                 this.onResize = function (event) {
                     _this.sendWidth();
                 };
@@ -47,6 +48,9 @@ var reactive;
                 var value = match[2];
                 if (key === 'height') {
                     var height = parseInt(value);
+                    if (this.addHeight) {
+                        height += this.addHeight;
+                    }
                     console.log("Child -> " + height + " H Parent (" + this.id + ")");
                     this.iframe.setAttribute('height', height + 'px');
                 }

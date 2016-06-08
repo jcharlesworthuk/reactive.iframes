@@ -1,6 +1,6 @@
 {
   "name": "reactive.iframes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A pair of javascript files for resizing iFrames that have a dynamic height",
   "main": "index.js",
   "directories": {
