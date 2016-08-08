@@ -32,7 +32,6 @@ var reactive;
                 var value = match[2];
                 if (key === 'width') {
                     var width = parseInt(value);
-                    console.log("Parent -> " + width + " W Child (" + this.id + ")");
                     if (width !== this.parentWidth) {
                         this.parentWidth = width;
                         this.sendMessage('height', this.currentHeight);
@@ -53,6 +52,9 @@ var reactive;
                 enumerable: true,
                 configurable: true
             });
+            Child.prototype.refresh = function () {
+                this.sendMessage('height', this.currentHeight);
+            };
             return Child;
         })();
         iframes.Child = Child;
@@ -61,16 +63,17 @@ var reactive;
 (function () {
     var oldWindowLoad = window.onload;
     if (document.readyState === "complete") {
-        new reactive.iframes.Child();
+        responsiveChild = new reactive.iframes.Child();
     }
     else {
         window.onload = function (e) {
-            new reactive.iframes.Child();
+            responsiveChild = new reactive.iframes.Child();
             if (oldWindowLoad) {
                 oldWindowLoad(e);
             }
         };
     }
 })();
+var responsiveChild;
 
 //# sourceMappingURL=reactive.iframes.child.js.map

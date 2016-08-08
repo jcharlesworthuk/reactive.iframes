@@ -51,7 +51,6 @@ var reactive;
                     if (this.addHeight) {
                         height += this.addHeight;
                     }
-                    console.log("Child -> " + height + " H Parent (" + this.id + ")");
                     this.iframe.setAttribute('height', height + 'px');
                 }
             };

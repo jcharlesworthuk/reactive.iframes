@@ -25,13 +25,13 @@ module reactive.iframes {
             this.messageRegex = new RegExp('^' + MessagePrefix + MessageDelimiter + this.id + MessageDelimiter + '(\\S+)' + MessageDelimiter + '(.+)$');
 
             window.addEventListener('message', this.processMessage.bind(this), false);
-            
+
             this.parentWidth = null;
             this.sendMessage('height', this.currentHeight);
         }
 
         processMessage(event: Event) {
-            
+
             if (!(event instanceof MessageEvent) || typeof <MessageEvent>event.data !== 'string') {
                 return;
             }
@@ -45,7 +45,7 @@ module reactive.iframes {
             var value = match[2];
             if (key === 'width') {
                 var width = parseInt(value);
-                console.log("Parent -> " + width + " W Child (" + this.id + ")");
+                //console.log("Parent -> " + width + " W Child (" + this.id + ")");
                 // Change the width if it's different.
                 if (width !== this.parentWidth) {
                     this.parentWidth = width;
@@ -61,10 +61,14 @@ module reactive.iframes {
         private makeMessage(messageType: string, message: string) {
             var bits = [MessagePrefix, this.id, messageType, message];
             return bits.join(MessageDelimiter);
-        }   
-        
+        }
+
         get currentHeight() : string {
             return document.body.offsetHeight.toString();
+        }
+
+        refresh() {
+            this.sendMessage('height', this.currentHeight);
         }
     }
 }
@@ -72,13 +76,15 @@ module reactive.iframes {
 (function () {
     var oldWindowLoad = window.onload;
     if (document.readyState === "complete") {
-        new reactive.iframes.Child();
+        responsiveChild = new reactive.iframes.Child();
     } else {
         window.onload = function (e: Event) {
-            new reactive.iframes.Child();
+            responsiveChild = new reactive.iframes.Child();
             if (oldWindowLoad) {
                 oldWindowLoad(e);
             }
         };
     }
 })();
+
+var responsiveChild: reactive.iframes.Child;
